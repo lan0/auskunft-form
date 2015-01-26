@@ -29,11 +29,13 @@ export default Ember.Component.extend({
     if(! model.get('isValid')) {
       return false;
     }
-    var relevant = [];
-    this.get('selectedApps').forEach(function(item) {
-      relevant.push(item.id);
-    });
-    model.set('relevant_apps', relevant);
+    if(this.get('selectedApps')) {
+      var relevant = [];
+      this.get('selectedApps').forEach(function (item) {
+        relevant.push(item.id);
+      });
+      model.set('relevant_apps', relevant);
+    }
     this.sendAction('submitAction');
   }
 });
