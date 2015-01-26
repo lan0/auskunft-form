@@ -1,23 +1,23 @@
 {{#em-form model=model submit_button=false}}
-    {{em-input cid="name" property="name" label="Voller Name"}}
-    {{em-text cid="address" property="address" label="Adresse"}}
-    {{em-input type="email" cid="email" property="email" label="E-Mail"}}
-    {{em-text cid="additional_info" property="additional_info" label="Zusätzliche Informationen"}}
-    {{em-select
-        label="Auftraggeber"
-        property="auftraggeber"
-        content=clients
-        optionValuePath="content.id"
-        optionLabelPath="content.name"
-        prompt="Bitte auswählen..."}}
-    {{multiselect-checkboxes options=applications labelProperty='description' selection=selectedApps}}
-    {{em-select
-        label="Identitätsnachweis"
-        property="identity"
-        content=identities
-        optionValuePath="content.id"
-        optionLabelPath="content.name"}}
-    <div class="form-actions">
-      <button {{action 'submit'}} type="submit" class="btn btn-primary">Absenden</button>
-    </div>
+  {{em-input cid="name" property="name" label="Voller Name"}}
+  {{em-text cid="address" property="address" label="Adresse"}}
+  {{em-input type="email" cid="email" property="email" label="E-Mail"}}
+  {{em-text cid="additional_info" property="additional_info" label="Zusätzliche Informationen"}}
+  {{em-select
+    label="Auftraggeber"
+    property="auftraggeber"
+    content=clients
+    optionValuePath="content.id"
+    optionLabelPath="content.name"
+    prompt="Bitte auswählen..."}}
+  {{multiselect-checkboxes options=applications labelProperty='description' selection=selectedApps}}
+  {{em-select
+    label="Identitätsnachweis"
+    property="identity"
+    content=identities
+    optionValuePath="content.id"
+    optionLabelPath="content.name"}}
+  <div class="form-actions">
+    <button {{action 'submit'}} type="submit" class="btn btn-primary">Absenden</button>
+  </div>
 {{/em-form}}
