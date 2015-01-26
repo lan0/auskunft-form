@@ -4,7 +4,8 @@ export default Ember.ObjectController.extend({
   clients: [],
   applications: [],
 
-  setupController: function() {
+  init: function() {
+    this._super();
     var that = this;
     Ember.$.get('http://192.168.1.125:8000/auftraggeber', function(result) {
       that.set('clients', result);
